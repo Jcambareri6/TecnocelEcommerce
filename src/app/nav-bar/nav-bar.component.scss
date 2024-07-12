@@ -1,0 +1,54 @@
+
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+/* Center alignment for the logo */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+
+button.menu {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button.menu i {
+  color: #000;
+}
+
+
+.dropdown-menu {
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+}
+
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.contacto-link ,.productos-btn {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}

@@ -1,0 +1,7 @@
+<div class="d-flex align-items-center ">
+  <span class="badge bg-primary cantidad " *ngIf="itemCount>-1">{{ itemCount }}</span>
+  <button class="menu bg-transparent border-0 p-0 m-0 ms-3" (click)="carritoComponent.toggleCarrito($event)">
+    <a href="#"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
+  </button>
+</div>
+<app-carrito #carritoComponent></app-carrito>

@@ -1,0 +1,28 @@
+<div class="carrito container" [class.active]="isCarritoVisible">
+  <div class="row mt-5">
+    <div class="col d-flex justify-content-center align-items-center">
+      <h1>tu Carrito</h1>
+      <button class="btn btnCart btn-danger position-absolute" (click)="closeCarrito()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
+  <div class="contenedorProductos row">
+    @for ( celular of CartList; track celular.nombre) {
+      <div class="col-12">
+        <div class="product-card d-flex align-items-center justify-content-between">
+          <img [src]="celular.imagen" alt="{{celular.nombre}}}" class="product-img">
+          <div class="product-info">
+            <h5>{{ celular.nombre }}</h5>
+            <p class="text-primary font-weight-bold">{{ celular.precio | currency }}</p>
+          </div>
+          <div>
+            <button class="btn btn-danger " (click)="deleteToCarrito(celular.nombre)" ><i class="fa-solid fa-trash"></i> </button>
+          </div>
+        </div>
+      </div>
+    }
+
+
+  </div>
+
+
+</div>
