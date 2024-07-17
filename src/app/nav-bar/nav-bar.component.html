@@ -1,41 +1,88 @@
-<header class="py-sm-4 px-sm-5 p-3 w-100 position-fixed start-0 top-0">
-  <div class="row justify-content-center align-items-center">
-    <div class="col-sm-3 d-none d-sm-flex align-items-center justify-content-center">
-      <input type="text" class="form-control me-2" placeholder="Búsqueda">
-      <button class="btn btn-outline-secondary" type="button">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-    </div>
-    <div class="col-sm-6 col">
-      <nav class="d-flex align-items-center justify-content-center">
-        <div class="dropdown d-none d-sm-block ">
-          <button class=" productos-btn border-0 bg-transparent p-0 m-0 dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</button>
-          <ul class="dropdown-menu border-0 rounded-0 shadow text-uppercase pt-1">
-            <li class="fw-bold px-4 py-2 text-dark pt-3">
-              <a class="text-dark text-decoration-none"  [routerLink]="['celulares/1']">Samsung</a>
-            </li>
-            <li class="fw-bold px-4 py-2 text-dark pt-3">
-              <a class="text-dark text-decoration-none" [routerLink]="['celulares/2']">Iphone</a>
-            </li>
+<header class="py-sm-4 px-sm-5 p-3 w-100 position-fixed start-0 top-0 bg-light">
+  <div class="container-fluid">
+    <div class="row justify-content-between align-items-center">
+      <!-- Barra de navegación izquierda -->
+      <div class="col-12 col-sm-6 d-flex align-items-center">
+        <nav class="navbar navbar-expand-lg w-100"> <!-- Añadido w-100 para ocupar todo el ancho -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#menuModal" aria-controls="menuModal" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-            <li class="fw-bold px-4 py-2 text-dark pt-3">
-              <a class="text-dark text-decoration-none"  [routerLink]="['celulares/3']">Motorola</a>
-            </li>
-          </ul>
-        </div>
-        <div class="mx-sm-5 text-center">
-          <a class="navbar-brand" [routerLink]="['/celulares']" >
-            <span class="text-primary">TECNO</span>CEL
-          </a>
-        </div>
-        <a class=" contacto-link ext-dark text-decoration-none d-none d-sm-block" [routerLink]="['/contacto']">Contacto</a>
-      </nav>
-    </div>
-    <div class="col-sm-3 text-center d-flex justify-content-center align-items-center">
+          <!-- Contenido del navbar -->
+          <div class="collapse navbar-collapse justify-content-between align-items-center" id="navbarNavDropdown">
+            <div class="col-sm-3 d-flex align-items-center justify-content-center justify-content-sm-start">
+              <input type="text" class="form-control me-2 busqueda" placeholder="Búsqueda">
+              <button class="btn btn-outline-secondary" type="button">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+
+            <!-- Contenedor centralizado -->
+            <div class=" contenedor-centralizado d-flex text-center align-items-center">
+              <!-- Dropdown de productos -->
+              <ul class="navbar-nav mx-auto p-3 ">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Productos
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" [routerLink]="['celulares/1']">Samsung</a></li>
+                    <li><a class="dropdown-item" [routerLink]="['celulares/2']">Iphone</a></li>
+                    <li><a class="dropdown-item" [routerLink]="['celulares/3']">Motorola</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <!-- Logo -->
+              <a class="navbar-brand mt-3 mt-sm-0" [routerLink]="['/celulares']">
+                <span class="text-primary">TECNO</span>CEL
+              </a>
+
+              <!-- Enlace de contacto -->
+              <div class="col-12 col-sm-3 d-none d-lg-block text-center mt-3 mt-sm-0">
+                <a class="nav-link" [routerLink]="['/contacto']">Contacto</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Carrito -->
+      <div class="col-12 col-sm-3 text-center d-flex justify-content-center align-items-center">
         <app-btn-carrito></app-btn-carrito>
-
+      </div>
     </div>
-
   </div>
-
 </header>
+
+<!-- Modal -->
+<div class="modal fade" id="menuModal" tabindex="-1" aria-labelledby="menuModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="menuModalLabel"><a class="navbar-brand mt-3 mt-sm-0" [routerLink]="['/celulares']">
+          <span class="text-primary">TECNO</span>CEL
+        </a></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Productos
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" [routerLink]="['celulares/1']">Samsung</a></li>
+              <li><a class="dropdown-item" [routerLink]="['celulares/2']">Iphone</a></li>
+              <li><a class="dropdown-item" [routerLink]="['celulares/3']">Motorola</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/contacto']">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

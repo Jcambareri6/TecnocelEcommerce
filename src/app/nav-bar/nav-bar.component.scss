@@ -7,11 +7,18 @@ header {
 
 /* Center alignment for the logo */
 .navbar-brand {
+  text-decoration: none;
+  list-style: none;
   font-weight: bold;
   font-size: 24px;
 }
+.nav-item{
+  list-style: none;
+}
 
-
+.busqueda{
+  width: 300px;
+}
 button.menu {
   background: none;
   border: none;
@@ -21,7 +28,9 @@ button.menu {
 button.menu i {
   color: #000;
 }
-
+.contenedor-centralizado{
+  margin-left:500px;
+}
 
 .dropdown-menu {
   top: 100%;

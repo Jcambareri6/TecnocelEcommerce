@@ -6,8 +6,9 @@
 
     @for (celular of filteredCelulares; track celular.nombre){
       <div class="col-md-4 mb-3 ">
-        <div class="card mx-auto" style="width: 18rem;">
+        <div class="card mx-auto " style="width: 18rem;">
           <div class="card-body">
+<a href="./assets/Imagenes/a15.png"></a>
             <div><img [srcset]="celular.imagen" class="card-img-top"  alt="{{celular.nombre}}" srcset=""></div>
             <h5 class="card-title mt-2">{{celular.nombre}}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{celular.nombre}}</h6>
